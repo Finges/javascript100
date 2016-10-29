@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Age in Seconds</title>
+    <script>
+      var age = prompt("How old are you in years?");
+
+      // Calcuate Age function
+      function calculateAgeInSecs(age){
+        var secondsInYear = 31557600; // Used the precalculated seconds in a year
+        return age * secondsInYear;
+      }
+
+      console.log("You are " + calculateAgeInSecs(age) + " seconds old");
+     </script>
+   </head>
+   <body>
+     <p>Your age in seconds... Check the console!</p>
+   </body>
+ </html>
+

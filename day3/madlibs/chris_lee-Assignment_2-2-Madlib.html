@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title> Mad Libs!</title>
+   </head>
+   <body>
+     <h1 id="h1"></h1>
+     <p id="madlib"></p>
+    <script>
+      //Establish Variables
+      var name;
+      var excl;
+      var adverb;
+      var noun;
+      var adj;
+      var madlib;
+      // Ask User for Name and Madlib parts
+      name = prompt('Welcome to madlibs, what is your name?');
+      excl = prompt("Please enter an exclaimation like 'wow', 'zoweee', 'OMG'");
+      adverb = prompt("Please enter an adverb like 'slowly', 'correctly', 'rapidly'");
+      noun = prompt("Please enter a noun like 'car', 'beach', 'baseball'");
+      adj = prompt("Please enter an adjective like 'smelly', 'crazy', 'fun', 'green'");
+
+      //Create Madlib
+      madlib = excl + "! he said " + adverb + " as he jumped into his convertible ";
+      madlib = madlib + noun + " and drove off with his " + adj + " wife.";
+
+      // Change html to include salutations and madlib.
+      document.getElementById("h1").innerHTML = "Hello " + name + "! here is your madlib!";
+      document.getElementById("madlib").innerHTML = madlib;
+
+     </script>
+   </body>
+ </html>
+

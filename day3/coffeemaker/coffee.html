@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title> Coffee Prompter</title>
+    <script>
+
+      function get_coffee(){
+        var coffee_types = ['Drip', 'Latte', 'Mocha', 'Americano'];
+        var coffee = 0;
+        while(coffee < 1 || coffee > 4){
+          coffee = prompt("What kind of Coffee would you like?\n 1. Drip\n 2. Latte\n 3. Mocha\n 4. Americano");
+        }
+        return coffee_types[coffee - 1];
+      }
+
+      function get_milk(){
+        var milk_types = ['Whole', 'Skim', 'Nonfat', 'Soy'];
+        var milk = 0;
+        while(milk < 1 || milk > 4){
+          milk = prompt("What kind of Milk would you like?\n 1. Whole\n 2. Skim\n 3. Nonfat\n 4. Soy");
+        }
+        return milk_types[milk - 1];
+      }
+
+      function get_flavor(){
+        var flavor_types = ['Vanilla', 'Hazelnut', 'Sugar', 'None'];
+        var flavor = 0;
+        while(flavor < 1 || flavor > 4){
+          flavor = prompt("What flavor would you like?\n 1. Vanilla\n 2. Hazelnut\n 3. Sugar\n 4. None");
+        }
+        return flavor_types[flavor - 1];
+      }
+
+
+      var coffee_price = {Drip: 1.50, Latte: 2.50, Mocha:3.00, Americano: 2.00};
+      var milk_price = {Whole: .30, Skim: .30, Nonfat: .30, Soy: .80};
+      var flavor_price = {Vanilla: .50, Hazelnut: .50, Sugar: .25, None: .00};
+
+      var coffee = get_coffee();
+      var milk = get_milk();
+      var flavor = get_flavor();
+
+      var total = coffee_price[coffee] + milk_price[milk] + flavor_price[flavor];
+      document.write("<p>Your " + milk + " milk, " + flavor + " flavored, " + coffee + " is going to be: $" + total.toFixed(2) +"</p>");
+      document.write("<p>Thanks!</p>");
+     </script>
+   </head>
+   <body>
+   </body>
+ </html>
+
