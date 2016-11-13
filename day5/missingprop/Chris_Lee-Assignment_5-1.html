@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Objects - make a dog object</title>
+  <script>
+
+var rainbow = {
+	name: "Rainbow",
+	weight: 16, 
+	breed: "Beagle",
+  likesFetching: true,
+  walkTimes: [1, 3, 5, 7] // added walkTimes array
+}; 
+
+
+function walkTheDog(dog) {
+	console.log(dog.name + " likes to be walked at: ");
+
+	for (var i = 0; i < dog.walkTimes.length; i++) {
+		console.log(dog.walkTimes[i]);
+	} 
+
+	if (dog.likesFetching == true) { 
+		console.log("Play fetch with " + dog.name); // Fixed spacing
+	} 
+
+} 
+
+walkTheDog(rainbow);
+
+
+  </script>
+</head>
+<body></body>
+</html>
+
+

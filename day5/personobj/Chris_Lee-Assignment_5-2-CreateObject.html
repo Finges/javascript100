@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Objects - Person object</title>
+    <script>
+      /*
+      *  Person object
+      *  Methods:
+      *    display: Prints Properties
+      *    canBuyAlcohol: Returns true if person is 21 or over
+      *    birthday: Adds an additional year to age
+      */
+
+      function person(name, age, hairColor, weight){
+        this.name = name;
+        this.age = age;
+        this.hairColor = hairColor;
+        this.weight = weight;
+        this.birthday = function(){
+          this.age = this.age + 1;
+        }
+        this.display = function(){
+          console.log("Name: " + this.name);
+          console.log("Age: " + this.age);
+          console.log("Hair Color: " + this.hairColor);
+          console.log("Weight: " + this.weight);
+        }
+        this.canBuyAlcohol = function(){
+          if(this.age < 21){
+            console.log('False');
+            return false;
+          }
+          console.log('True');
+          return true;
+        }
+      }
+      // Test person 1
+
+      person1 = new person('Chris', 19, 'Black', 200);
+      person1.display();
+      person1.canBuyAlcohol();
+
+      // Test person 2
+      person2 = new person('Bob', 21, 'Blue', 120);
+      person2.display();
+      person2.canBuyAlcohol();
+
+      // Test person 3
+      person3 = new person('Phil', 42, 'Brown', 320);
+      person3.display();
+      person3.canBuyAlcohol();
+
+      // Birthday test
+      person3.birthday();
+      person3.display();
+    </script>
+  </head>
+  <body></body>
+</html>
+
+

@@ -1,0 +1,8 @@
+Interesting Projects:
+
+https://github.com/meteor/meteor
+
+Meteor is self-described as 'an Ultra-Simple environment for building modern web applications'
+It's interesting because it sends pure JS and data over the wire instead of javascript. It
+seems like it's Javascripts answer to Ruby on Rails. It'd be nice to have a library to test/build
+out some test websites/web applications without needing too much engineering effort 
