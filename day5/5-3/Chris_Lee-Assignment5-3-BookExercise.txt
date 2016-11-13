@@ -1,0 +1,14 @@
+If you were implmenting a classing pingpong style video game. What would you
+choose as objects? What state and behavior do you think they'd have.
+Paddle
+  - Location
+Ball
+  - Current Location
+  - Speed
+  - Direction
+Player
+  - Paddle
+  - Score
+
+----------------------------------------------------------------
+My Watch Stopped at midnight
