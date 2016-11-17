@@ -1,0 +1,144 @@
+<!--
+** No Previous Change Log **
+
+** original Author: Reed Rotondo
+** Date: 22 Oct 2016
+** JSCRIPT 100 B
+** Description: Project Part 3 - Battleship!
+** Changelog
+** 10/27/16 Chris Esposito - moved user name entry and display into functgion
+** 11/05/16 Jose Mayorquin - added the ship object
+** 11/10/16 Chris Lee - Added full 5x5 board
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Battle of Puget Sound</title>
+		<style>
+			#battlefield {
+				width:100%;
+				color: blue;
+				letter-spacing: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Battle of Puget Sound</h1>
+
+		<div id="battlefield">
+
+		</div>
+		<script>
+			// CE get user name and welcome them to the game
+			function welcomeUser()
+			{
+				userName = prompt('Please enter a user name');
+				if (userName) {
+					alert('Welcome Admiral ' + userName);
+					return userName;
+				} else {
+					userName = 'Kale Beard'
+					alert("You prefer to remain anonymous, that's Ok. You will therefore be known as " + userName);
+					return userName;
+				}
+			}
+      /*
+			* Create a board object
+			* @param width: Width of Board
+			* @param height: Height of the board
+			* @method init: initializes new board with water with height/width of board
+			* @method placeShip: Places a ship into board
+		  *   @parameter placeShip.shipLength: length of ship
+			* @method printedBoard: HTML table representation of board
+			*/
+		  function Board(width, height){
+
+				this.width = width;
+				this.height = height;
+				this.board = new Array();
+				this.init = function() {
+					for(i = 0; i < this.height; i++){
+							this.board[i] = new Array(this.width);
+							this.board[i].fill('w');
+						}
+					};
+				this.placeShip = function(shipLength){
+					var row = Math.floor((Math.random() * (this.height + 1)));
+				  var col = Math.floor((Math.random() * (this.width - shipLength + 1)));
+					for(i = 0; i < shipLength; i++){
+						this.board[row][col + i] = 's';
+					}
+				};
+				this.printBoard = function(){
+					var printedBoard = "<table>";
+					for(i = 0; i < this.height; i++){
+					  printedBoard = printedBoard + "<tr>";
+						for(j = 0; j < this.width; j++){
+							printedBoard = printedBoard + "<td>" + this.board[i][j] + "</td>";
+						}
+					  printedBoard = printedBoard + "</tr>";
+					}
+					printedBoard = printedBoard + "</table>";
+					return printedBoard;
+				};
+				}
+
+				var playBoard = new Board(5,5);
+				playBoard.init();
+				playBoard.placeShip(3);
+				document.write(playBoard.printBoard());
+
+			  var userName = welcomeUser();  //CE new call to new function
+
+			/* KEEP THESE COMMENTS
+			 Merge the below code with the code from Project parts 1 and 2 that
+			you received prior to this project Part 3 Assignment. Be sure to keep the pre-existing Changelog Info showing all the previous developers. Be sure to test
+			this code */
+
+			/* Removing guessing code as per assignment
+
+			function getGuess() {
+				var randomLoc = Math.floor(Math.random() * width);
+				var location1 = randomLoc;
+				var location2 = location1 + 1;
+				var location3 = location1 + 2;
+				// added ship object - JM
+				var ship = {
+					shipLength: 3,
+					isSunk: false, // removed isSunk from the variable lst and added it into the object - JM
+					shipPositions: [location1, location2, location3] // Store the random locations in objects array -JM
+				};
+				var guess;
+				var hits = 0; // added semi-colon - Reed
+				var guesses = 0;
+				// This code was edited by Cliff Knopik 10-13-16
+				while (ship.isSunk == false) {	// 1) edited operator - Reed - 2) updated to ship.isSunk - JM
+					guess = prompt("Ready, aim, fire! (enter a number from 0-" + width + "):");	// added quotation and edited width - Reed
+					if (guess < 0 || guess > width) {	// fixed var names - Reed
+						alert("Please enter a valid cell number!");
+					} else {
+						guesses += 1;	// shortened code - Reed
+						// Edited below locations to refernence the shipLocatins array i the ship object -JM
+						if (guess == ship.shipPositions[0] || guess == ship.shipPositions[1] || guess == ship.shipPositions[2]) {
+							alert("HIT!");
+							hits += 1;	// shortened code - Reed
+							if (hits == 3) {
+								ship.isSunk = true;
+								alert("Noooo! You sank my battleship!");
+							}
+						} else {
+							alert("Neener, Neener, Neener  YOU MISSED");
+						}
+					}
+				}
+				// edited accuracy math - Reed
+				var stats = "You took " + guesses + " guesses to sink the battleship, " +
+				"which means your shooting accuracy was " + Math.floor((3 / guesses) * 100) + "%";
+				alert(stats);
+			}
+			*/
+
+		</script>
+	</body>
+</html>
