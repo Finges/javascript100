@@ -1,0 +1,56 @@
+<html>
+<head>
+	<script>
+	  /*
+		 * Main function. Gets price and prints
+		 */
+    function promptPrice(){
+			price = prompt('Please enter a price. (format: 34.23)');
+			// Loops until price is Greater than 0, a Valid number and has exactly 2 decimals
+			while (!validNumber(price) || Number(price) <= 0 || !validDecimal){
+				price = prompt('The price you entered is not valid. Please enter a price:');
+			}
+			printPrice(price);
+		}
+
+	  /*
+		 * Checks to see that input is indeed a number.
+		 */
+		function validNumber(price){
+		  	if (Number.isNaN(Number(price))) {
+					return false;
+				} else {
+					return true;
+				}
+		}
+
+	  /*
+		 * Checks to see if the price entered has only 2 decimals
+		 */
+		function validDecimal(price){
+		  if (price.split(".")[1].length > 2){
+				return false;
+			}	else {
+				return true;
+			}
+		}
+
+	  /*
+		 * Prints price into dollars and cents into a div id'd as 'check'
+		 */
+    function printPrice(price){
+			dollarAmount = price.split(".")[0];
+			pennyAmount = price.split(".")[1];
+			dollars = "Number of Dollars: " + dollarAmount;
+			pennies = "Number of Cents: " + pennyAmount;
+			check = document.getElementById('check');
+			check.innerHTML = dollars + "<br>" + pennies;
+		}
+	</script>
+</head>
+<body onload="promptPrice();">
+	<h1>Price Checker by Chris Lee</h1>
+	<div id='check'>
+	</div>
+</body>
+</html>

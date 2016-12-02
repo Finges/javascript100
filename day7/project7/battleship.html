@@ -1,0 +1,73 @@
+
+<!--
+**********
+JSCRIPT 100 Course Project
+***********
+Changelog
+10/7/16 - Hannah Notess (JS and HTML files created)
+10/15/2016 - Sam Guerrero (Added user prompt for size of the battle field, and code block evaluating vailidity of user input.)
+10/29/2016 - Brian Teausant (Reviewed code, update file to battleship-4 for project 4, working on function in JS)
+11/05/2016 - Reed Rotondo - Did not touch this page, made numerous changes to battleship.js, noted changes in that file
+11/13/16 - Chandni Sabhaya- Added table
+********** 
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Battleship</title>
+	 <style>
+		 /* Added a very small amount of styling to this page. May need to pull it out into its own style sheet as the project evolves. */
+	   body {
+			background-color: black;
+			color: #1FBED6;
+			text-align: center;
+			font-family: monospace;
+		   }
+	 </style>
+</head>
+<body>
+	<h1>The Game of Battleship</h1>	
+	<table>
+	<tr>
+		<td id="A1"> W </td>
+		<td id="A2"> W </td>
+		<td id="A3"> W </td>
+		<td id="A4"> W </td>
+		<td id="A5"> W </td>
+	</tr>
+	<tr>
+		<td id="B1"> W </td>
+		<td id="B2"> W </td>
+		<td id="B3"> W </td>
+		<td id="B4"> W </td>
+		<td id="B5"> W </td>
+	</tr>
+	<tr>
+		<td id="C1"> W </td>
+		<td id="C2"> W </td>
+		<td id="C3"> W </td>
+		<td id="C4"> W </td>
+		<td id="C5"> W </td>
+	</tr>
+	<tr>
+		<td id="D1"> W </td>
+		<td id="D2"> W </td>
+		<td id="D3"> W </td>
+		<td id="D4"> W </td>
+		<td id="D5"> W </td>
+	</tr>
+	<tr>
+		<td id="E1"> W </td>
+		<td id="E2"> W </td>
+		<td id="E3"> W </td>
+		<td id="E4"> W </td>
+		<td id="E5"> W </td>
+	</tr>
+</table>
+<script src="battleship.js"></script>
+</body>
+	<!-- I chose to put the script at the end of the body since the alert and prompt methods are called on the Window object, then the methods will not run until the DOM is loaded. I think.-->
+</body>
+</html>

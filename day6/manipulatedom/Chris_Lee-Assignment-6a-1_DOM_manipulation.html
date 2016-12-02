@@ -1,0 +1,36 @@
+<html>
+<head>
+  <style>
+  h1 { color: green; }
+  p { color: blue; }
+  div { color: red; }
+  </style>
+<script>
+// Change the background style of the header to purple
+function headerPurpleBackground() {
+  header = document.getElementById('header');
+  header.style.backgroundColor='purple';
+}
+// Change alt text for image. You can see the results in the console.
+function addAltText(altText){
+  image = document.getElementById('image');
+  image.attributes[0].alt = altText;
+  console.log(image.attributes)
+}
+// Function to alert the InnerHTML of the 'divider' div
+function alertDiv() {
+  div = document.getElementById('divider');
+  alert(div.innerHTML);
+}
+</script>
+</head>
+<body onload="headerPurpleBackground();addAltText('Google Logo of course');alertDiv();">
+
+<h1 id='header' >This is a header</h1>
+
+<p id='paragraph' >This is a paragraph.</p>
+
+<div id='divider' >This is a div section. </div>
+<div id='image'><img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'> </div>
+
+</body>
